@@ -191,7 +191,7 @@ const Contact = () => {
                     </button>
 
                     <p className="text-xs text-ink/60">
-                      Placeholder submission. Replace with Formspree, a CRM, or your backend endpoint.
+                      Let's Talk
                     </p>
                   </form>
                 </FadeIn>
