@@ -1,0 +1,176 @@
+import Seo from "../components/Seo";
+import { useEnquiry } from "../components/EnquiryContext";
+import { site } from "../content/site";
+import { FadeIn } from "../components/ui/Motion";
+
+const Services = () => {
+  const { openModal } = useEnquiry();
+  const services = site.services;
+
+  return (
+    <div id="top">
+      <Seo
+        title="Catering services in Cyprus"
+        description="Event catering, private chef experiences, cocktail parties, confectionery and private aviation menus — designed and delivered across Cyprus by Hungry Monkey."
+        image={site.services[0].image}
+        canonicalPath="/services"
+      />
+
+      {/* MENU-STYLE HEADER */}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="py-12 md:py-16">
+            <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.35em] text-ink/60">
+              <span>Curated catering</span>
+              <span className="hidden md:inline">Cyprus • Weddings • Villas</span>
+              <span>New requests</span>
+            </div>
+
+            <h1 className="hm-display mt-10 text-center text-6xl font-semibold leading-[0.85] text-ink sm:text-7xl md:text-[104px]">
+              Menu
+            </h1>
+
+            <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-ink/70 md:text-base">
+              Choose a direction below. Each service is built around your guest experience — timing, staffing, plating, and venue flow.
+            </p>
+          </div>
+        </div>
+
+        <div className="overflow-hidden bg-ink">
+          <img
+            src={site.gallery[0]}
+            alt="Hungry Monkey catering menu preview"
+            loading="eager"
+            className="h-[260px] w-full object-cover opacity-95 sm:h-[320px] md:h-[420px]"
+          />
+        </div>
+
+        {/* Sticky category rail */}
+        <div className="sticky top-20 z-30 border-y border-line bg-cream/95 backdrop-blur md:top-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6">
+            <div className="no-scrollbar flex items-center gap-6 overflow-x-auto py-4 text-[11px] uppercase tracking-[0.3em] text-ink/70">
+              {services.map((s) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  className="whitespace-nowrap hover:text-ink"
+                >
+                  {s.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES (alternating, no card chrome) */}
+      <section className="bg-cream py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="space-y-16 md:space-y-24">
+            {services.map((service, idx) => {
+              const flip = idx % 2 === 1;
+              return (
+                <FadeIn key={service.id}>
+                  <article
+                    id={service.id}
+                    className="grid gap-8 lg:grid-cols-12 lg:items-center"
+                  >
+                    <div className={`overflow-hidden bg-ink lg:col-span-7 ${flip ? "lg:order-2" : ""}`}
+                    >
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                        loading="lazy"
+                        width={1200}
+                        height={800}
+                        className="h-[280px] w-full object-cover sm:h-[360px] md:h-[460px]"
+                      />
+                    </div>
+
+                    <div className={`lg:col-span-5 ${flip ? "lg:order-1" : ""}`}>
+                      <p className="text-[11px] uppercase tracking-[0.35em] text-gold">
+                        Service {String(idx + 1).padStart(2, "0")}
+                      </p>
+                      <h2 className="hm-display mt-4 text-4xl font-semibold leading-[0.95] text-ink md:text-5xl">
+                        {service.name}
+                      </h2>
+                      <p className="mt-4 text-sm text-ink/70 md:text-base">{service.description}</p>
+
+                      <div className="mt-6 space-y-3 border-l border-line pl-5">
+                        {service.bullets.map((b) => (
+                          <p key={b} className="text-sm text-ink/75">
+                            {b}
+                          </p>
+                        ))}
+                      </div>
+
+                      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                        <button
+                          type="button"
+                          onClick={() => openModal(service.name)}
+                          className="inline-flex items-center justify-between border border-ink/20 bg-ink px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-cream transition hover:bg-ink/90"
+                        >
+                          Enquire about {service.name}
+                        </button>
+                        <a
+                          href="#top"
+                          className="inline-flex items-center justify-between border border-ink/20 bg-transparent px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-ink transition hover:border-ink/40"
+                        >
+                          Back to top
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                </FadeIn>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-sand py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <FadeIn>
+            <p className="text-xs uppercase tracking-[0.4em] text-gold">FAQ</p>
+            <h2 className="hm-display mt-5 text-4xl font-semibold leading-[0.95] text-ink md:text-5xl">
+              Questions, answered.
+            </h2>
+          </FadeIn>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {[
+              {
+                title: "How far in advance should we book?",
+                body: "We recommend 4–6 weeks for private dining and 3+ months for large celebrations and peak season weddings.",
+              },
+              {
+                title: "Do you offer bespoke menus?",
+                body: "Yes. Every menu is tailored around your guests, dietary needs, venue facilities and the rhythm of your event.",
+              },
+              {
+                title: "Can you manage full event staffing?",
+                body: "Absolutely. We provide chefs, wait staff, bartenders, setup crews and on-site coordination.",
+              },
+              {
+                title: "Do you cater across the island?",
+                body: "Yes — Paphos, Limassol, Larnaca, Nicosia and destination venues across Cyprus.",
+              },
+            ].map((item) => (
+              <FadeIn key={item.title}>
+                <details className="border-b border-line pb-6">
+                  <summary className="cursor-pointer list-none text-sm font-semibold text-ink">
+                    {item.title}
+                  </summary>
+                  <p className="mt-3 text-sm text-ink/70">{item.body}</p>
+                </details>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Services;

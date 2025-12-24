@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --hm-ink: #111113;
+  --hm-cream: #faf8f4;
+  --hm-gold: #c8a25a;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #faf8f4;
+  color: #111113;
+  min-height: 100vh;
+  text-rendering: geometricPrecision;
+}
+
+/* Editorial-style headings without "card" chrome */
+.hm-display {
+  font-family: "Cormorant Garamond", serif;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+.hm-hairline {
+  background: rgba(231, 223, 210, 0.9);
+}
+
+.hm-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: #111113;
+  color: #faf8f4;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  font-weight: 600;
+  transition: top 0.2s ease;
+  z-index: 50;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation-duration: 0.001ms !important;
+  }
+}
