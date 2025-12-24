@@ -122,7 +122,7 @@ const Header = () => {
                 headerTone.button
               }`}
             >
-              Menu <ArrowRight className="h-4 w-4" />
+              Services <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
