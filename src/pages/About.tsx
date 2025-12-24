@@ -47,6 +47,69 @@ const About = () => {
         </div>
       </section>
 
+      {/* FOUNDERS */}
+<section className="bg-cream py-16 md:py-24">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+      {/* Image */}
+      <FadeIn className="lg:col-span-6">
+        <div className="overflow-hidden bg-ink">
+          <img
+            src="https://www.hungrymonkeycyprus.com/wp-content/uploads/2023/08/Makis-Ifigenia.jpg"
+            alt="Makis & Ifigenia, founders of Hungry Monkey Catering"
+            loading="lazy"
+            decoding="async"
+            className="h-[360px] w-full object-cover sm:h-[440px] md:h-[520px]"
+          />
+        </div>
+      </FadeIn>
+
+      {/* Copy */}
+      <div className="lg:col-span-6">
+        <FadeIn>
+          <p className="text-xs uppercase tracking-[0.4em] text-gold">Founders</p>
+          <h2 className="hm-display mt-5 text-4xl font-semibold leading-[0.95] text-ink md:text-5xl">
+            The heart behind the company.
+          </h2>
+
+          <p className="mt-4 text-[11px] uppercase tracking-[0.3em] text-ink/60">
+            Makis &amp; Ifigenia
+          </p>
+
+          <div className="mt-7 space-y-4 text-sm leading-relaxed text-ink/70 md:text-base">
+            <p>
+              As the heart behind our catering company, we are driven by the passion to offer
+              unparalleled service and remarkable hospitality to all our clients.
+            </p>
+            <p>
+              We intricately manage every facet of your experience and take joy in extending a
+              heartfelt reception. Our genuine intent to create a delightful event is unmistakable,
+              setting us apart from other providers in the industry.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Link
+              to="/about"
+              className="inline-flex items-center justify-between border border-ink/25 bg-transparent px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-ink transition hover:border-ink/45"
+            >
+              Meet the founders
+            </Link>
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-between bg-ink px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-cream transition hover:bg-ink/90"
+            >
+              Start an enquiry
+            </Link>
+          </div>
+        </FadeIn>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       {/* Team (collage, not cards) */}
       <section className="bg-cream py-16 md:py-24">
   <div className="mx-auto max-w-7xl px-4 sm:px-6">
