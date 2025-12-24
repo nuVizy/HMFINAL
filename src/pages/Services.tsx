@@ -27,7 +27,7 @@ const Services = () => {
             </div>
 
             <h1 className="hm-display mt-10 text-center text-6xl font-semibold leading-[0.85] text-ink sm:text-7xl md:text-[104px]">
-              Menu
+              Services
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-ink/70 md:text-base">
