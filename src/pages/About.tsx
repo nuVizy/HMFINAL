@@ -49,33 +49,46 @@ const About = () => {
 
       {/* Team (collage, not cards) */}
       <section className="bg-cream py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <FadeIn>
-            <p className="text-xs uppercase tracking-[0.4em] text-gold">Team</p>
-            <h2 className="hm-display mt-5 text-4xl font-semibold leading-[0.95] text-ink md:text-5xl">
-              The people behind the plates.
-            </h2>
-          </FadeIn>
+  <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <FadeIn>
+      <p className="text-xs uppercase tracking-[0.4em] text-gold">Team</p>
+      <h2 className="hm-display mt-5 text-4xl font-semibold leading-[0.95] text-ink md:text-5xl">
+        The people behind the plates.
+      </h2>
+    </FadeIn>
 
-          <div className="mt-12 grid grid-cols-12 gap-4">
-            {site.team.map((m, idx) => (
-              <FadeIn key={m.name} delay={idx * 0.04} className={idx === 0 ? "col-span-12 md:col-span-6" : "col-span-6 md:col-span-3"}>
-                <div className="overflow-hidden bg-ink">
-                  <img
-                    src={m.image}
-                    alt={`${m.name} — ${m.role}`}
-                    loading="lazy"
-                    className="h-[240px] w-full object-cover sm:h-[280px] md:h-[340px]"
-                  />
-                </div>
-                <p className="mt-3 text-sm font-semibold text-ink">{m.name}</p>
-                <p className="mt-1 text-[11px] uppercase tracking-[0.3em] text-gold">{m.role}</p>
+    {/* Horizontal grid (mobile) -> standard grid (md+) */}
+    <div className="mt-12 -mx-4 px-4 sm:mx-0 sm:px-0">
+      <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[82%] gap-4 overflow-x-auto pb-2 sm:auto-cols-[48%] md:snap-none md:grid-flow-row md:auto-cols-auto md:grid-cols-3 md:overflow-visible lg:grid-cols-4">
+        {site.team.map((m, idx) => (
+          <FadeIn key={m.name} delay={idx * 0.04} className="snap-start">
+            <div className="flex h-full flex-col">
+              {/* Portrait, uniform sizing */}
+              <div className="aspect-[3/4] overflow-hidden bg-ink">
+                <img
+                  src={m.image}
+                  alt={`${m.name} — ${m.role}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+
+              <div className="mt-4">
+                <p className="text-sm font-semibold text-ink">{m.name}</p>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.3em] text-gold">
+                  {m.role}
+                </p>
                 <p className="mt-2 text-xs text-ink/65">{m.bio}</p>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+              </div>
+            </div>
+          </FadeIn>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Credibility */}
       <section className="bg-sand py-16 md:py-20">
