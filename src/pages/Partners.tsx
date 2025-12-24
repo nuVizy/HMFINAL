@@ -61,46 +61,6 @@ const Partners = () => {
         </div>
       </section>
 
-      {/* Featured partner */}
-      <section className="bg-sand py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
-            <FadeIn className="lg:col-span-5">
-              <p className="text-xs uppercase tracking-[0.4em] text-gold">Feature</p>
-              <h2 className="hm-display mt-5 text-4xl font-semibold leading-[0.95] text-ink md:text-5xl">
-                {partner.name}
-              </h2>
-              <p className="mt-4 text-sm text-ink/70 md:text-base">{partner.description}</p>
-              <p className="mt-4 text-sm text-ink/70 md:text-base">{partner.story}</p>
-            </FadeIn>
-
-            <FadeIn className="lg:col-span-7">
-              <div className="grid grid-cols-12 gap-4">
-                {partner.images.map((image, index) => (
-                  <div
-                    key={image}
-                    className={
-                      index === 0
-                        ? "col-span-12 overflow-hidden bg-ink md:col-span-7"
-                        : index === 1
-                          ? "col-span-6 overflow-hidden bg-ink md:col-span-5"
-                          : "col-span-6 overflow-hidden bg-ink md:col-span-4"
-                    }
-                  >
-                    <img
-                      src={image}
-                      alt={`${partner.name} imagery ${index + 1}`}
-                      loading="lazy"
-                      className="h-[220px] w-full object-cover sm:h-[260px] md:h-[320px]"
-                    />
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
       {/* Expand */}
       <section className="bg-cream py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
