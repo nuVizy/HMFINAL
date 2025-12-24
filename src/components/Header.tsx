@@ -93,28 +93,6 @@ const Header = () => {
             </nav>
           </div>
 
-          {/* Center: segmented switch (matches reference layout) */}
-          <div className="hidden md:flex">
-            <div className="flex overflow-hidden border border-current/25 bg-transparent text-xs uppercase tracking-[0.22em]">
-              <Link
-                to="/services"
-                className={`px-5 py-2 transition-colors ${
-                  location.pathname.startsWith("/services") ? "bg-current/10" : "hover:bg-current/5"
-                }`}
-              >
-                Catering
-              </Link>
-              <Link
-                to="/partners"
-                className={`px-5 py-2 transition-colors ${
-                  location.pathname.startsWith("/partners") ? "bg-current/10" : "hover:bg-current/5"
-                }`}
-              >
-                Venues
-              </Link>
-            </div>
-          </div>
-
           {/* Right: actions */}
           <div className="flex items-center gap-3">
             <button
