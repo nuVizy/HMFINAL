@@ -37,15 +37,6 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="overflow-hidden bg-ink">
-          <img
-            src={site.gallery[0]}
-            alt="Hungry Monkey catering menu preview"
-            loading="eager"
-            className="h-[260px] w-full object-cover opacity-95 sm:h-[320px] md:h-[420px]"
-          />
-        </div>
-
         {/* Sticky category rail */}
         <div className="sticky top-20 z-30 border-y border-line bg-cream/95 backdrop-blur md:top-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
