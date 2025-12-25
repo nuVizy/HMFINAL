@@ -69,9 +69,9 @@ const Home = () => {
                 animate={reduce ? undefined : { opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
-                {"Flavors"}
+                {"Hungry Monkey"}
                 <br />
-                {"that stay"}
+                {"Catering"}
               </motion.h1>
 
               <motion.div
