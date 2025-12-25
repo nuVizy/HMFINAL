@@ -211,7 +211,7 @@ const Home = () => {
       </section>
 
       {/* FULL-BLEED STRIP */}
-      <section className="bg-ink">
+      <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
           <div className="grid grid-cols-12 gap-3">
             {site.gallery.slice(0, 6).map((src, i) => (
