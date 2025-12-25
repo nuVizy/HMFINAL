@@ -97,7 +97,7 @@ const Home = () => {
                     to="/services"
                     className="w-full border border-cream/35 bg-transparent px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-cream transition hover:border-cream/70 sm:w-auto"
                   >
-                    View menu
+                    Services
                   </Link>
                 </div>
 
